@@ -1,4 +1,4 @@
-// client-side js
+git stat// client-side js
 // run by the browser each time your view template is loaded
 
 $(function() {
