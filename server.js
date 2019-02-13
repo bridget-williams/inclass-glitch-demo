@@ -82,12 +82,16 @@ app.get('/category-playlists', function (request, response) {
   
   countries.forEach((country)=>{
   console.log(country)
+    console.log(new Date());
     spotifyApi.getPlaylistsForCategory('roots', { country: country.code, limit : 10})
     
     .then((data) =>{
     
     // Send the list of playlists
-    response.send(data.body.playlists);
+    // response.send(data.body.playlists);
+      
+      country.data = data;
+      
     
   }, function(err) {
     console.error(err);
