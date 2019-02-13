@@ -56,7 +56,7 @@ $(function() {
     
     
     // The audio features we want to show
-    var keys = ["danceability", "energy", "acousticness", "speechiness", "instrumentalness"]
+    var keys = ["danceability", "energy", "acousticness", "speechiness", "instrumentalness", "name"]
     
     // Display the audio features
     keys.map(function(key, i) {

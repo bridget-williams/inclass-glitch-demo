@@ -87,7 +87,7 @@ app.get('/audio-features', function (request, response) {
       console.error(err);
     });
   
-  spotifyApi.getTrack('4uLU6hMCjMI75M1A2tKUQC'
+  
 });
 
 app.get('/artist', function (request, response) {
