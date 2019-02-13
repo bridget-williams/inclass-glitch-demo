@@ -53,6 +53,7 @@ $(function() {
     console.group('%cResponse from /audio-features', 'color: #F037A5; font-size: large');
     console.log(data);
     console.groupEnd();
+ 
     
     
     // The audio features we want to show
