@@ -88,6 +88,13 @@ $(function() {
       var genreItem = $('<p>' + genre + '</p>');
       genreItem.appendTo('#artist-container');
     });
+    
+    var followers = $('<h4> Followers: ' + data.followers.total + '</h4>');
+    followers.appendTo('#artist-container');
+    
+    var popularity = $('<h4> Popularity: ' + data.popularity + '</h4>');
+    popularity.appendTo('#artist-container');
+    
   });
   
   $.get('/artist-top-tracks', function(data) {
@@ -100,6 +107,9 @@ $(function() {
     data.map(function(track, i) {
       var trackName = $('<li>' + track.name + '</li>');
       trackName.appendTo('#top-tracks-container');
+      
+      // var artist = data[0].artists[0].name;
+      // artist.appendTo('#top-tracks-container');
     });
   });
 
