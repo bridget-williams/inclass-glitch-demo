@@ -103,14 +103,17 @@ $(function() {
     console.log(data);
     console.groupEnd();
     
+      console.log(data[0].artists[0].name);
+         var artist = $('<p>Artist: '+ data[0].artists[0].name + '</p>');
+          artist.appendTo('#top-tracks-container');
+    
     // Display the audio features
     data.map(function(track, i) {
       var trackName = $('<li>' + track.name + '</li>');
       trackName.appendTo('#top-tracks-container');
-      
-      // var artist = data[0].artists[0].name;
-      // artist.appendTo('#top-tracks-container');
     });
+    
+  
   });
 
 });
