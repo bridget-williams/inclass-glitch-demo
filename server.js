@@ -118,19 +118,19 @@ app.get('/category-playlists', function (request, response) {
 //   }, function(err) {
 //     console.error(err);
 //   });
-// });
+});
 
-// app.get('/audio-features', function (request, response) {
-//   // Get the audio features for a track ID
-//   spotifyApi.getAudioFeaturesForTrack('4uLU6hMCjMI75M1A2tKUQC')
-//     .then(function(data) {
+app.get('/audio-features', function (request, response) {
+  // Get the audio features for a track ID
+  spotifyApi.getAudioFeaturesForTrack('4uLU6hMCjMI75M1A2tKUQC')
+    .then(function(data) {
     
-//       //Send the audio features object
-//       response.send(data.body);
+      //Send the audio features object
+      response.send(data.body);
     
-//     }, function(err) {
-//       console.error(err);
-//     });
+    }, function(err) {
+      console.error(err);
+    });
   
   
 });
