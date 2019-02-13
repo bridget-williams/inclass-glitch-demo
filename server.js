@@ -90,46 +90,47 @@ app.get('/category-playlists', function (request, response) {
   
     });
   
-  while(
-    countries.filter(c => c.data !== undefined).length == countries.length){
-     console.log(countries);
+ 
+  
+  let check = () => {
+    if (countries.filter(c => c.data !== undefined).length !== countries.length){
+      setTimeout(check, 500);
+    } else {
+      response.send(countries);
+    }
   }
-        response.send(countries);     
-
+  
+  check();
   
 //   let countriesShort= {
 //     se: "Sweden",
 //     fr : "France",
 //   }
   
- 
-  
-
-  
   // Get playlists from a browse category
   // Find out which categories are available here: https://beta.developer.spotify.com/console/get-browse-categories/
-  spotifyApi.getPlaylistsForCategory('roots', { country: 'se', limit : 10})
-    .then(function(data) {
+//   spotifyApi.getPlaylistsForCategory('roots', { country: 'se', limit : 10})
+//     .then(function(data) {
     
-    // Send the list of playlists
-    response.send(data.body.playlists);
+//     // Send the list of playlists
+//     response.send(data.body.playlists);
     
-  }, function(err) {
-    console.error(err);
-  });
-});
+//   }, function(err) {
+//     console.error(err);
+//   });
+// });
 
-app.get('/audio-features', function (request, response) {
-  // Get the audio features for a track ID
-  spotifyApi.getAudioFeaturesForTrack('4uLU6hMCjMI75M1A2tKUQC')
-    .then(function(data) {
+// app.get('/audio-features', function (request, response) {
+//   // Get the audio features for a track ID
+//   spotifyApi.getAudioFeaturesForTrack('4uLU6hMCjMI75M1A2tKUQC')
+//     .then(function(data) {
     
-      //Send the audio features object
-      response.send(data.body);
+//       //Send the audio features object
+//       response.send(data.body);
     
-    }, function(err) {
-      console.error(err);
-    });
+//     }, function(err) {
+//       console.error(err);
+//     });
   
   
 });
