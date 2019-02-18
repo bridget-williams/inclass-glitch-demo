@@ -75,19 +75,13 @@ app.get('/category-playlists', function (request, response) {
     }
   ];
   
-   countries.forEach((c)=>{
-
+   countries.forEach((c) => {
     spotifyApi.getPlaylistsForCategory('roots', { country: c.code, limit : 10})
-    
-    .then((data) =>{
-  
+    .then((data) => {
       c.data = data.body;
-      
-    
   }, function(err) {
     console.error(err);
   });
-  
     });
   
  
@@ -101,23 +95,6 @@ app.get('/category-playlists', function (request, response) {
   }
   
   check();
-  
-//   let countriesShort= {
-//     se: "Sweden",
-//     fr : "France",
-//   }
-  
-  // Get playlists from a browse category
-  // Find out which categories are available here: https://beta.developer.spotify.com/console/get-browse-categories/
-//   spotifyApi.getPlaylistsForCategory('roots', { country: 'se', limit : 10})
-//     .then(function(data) {
-    
-//     // Send the list of playlists
-//     response.send(data.body.playlists);
-    
-//   }, function(err) {
-//     console.error(err);
-//   });
 });
 
 app.get('/audio-features', function (request, response) {
